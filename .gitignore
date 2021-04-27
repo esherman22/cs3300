@@ -32,4 +32,3 @@
 
 /coverage/
 
-echo "coverage" >> .gitignore
