@@ -10,5 +10,7 @@ before_install:
 
 
 script:
+ - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash
+ - sudo apt-get -y install nodejs
  - bundle exec rspec
 
