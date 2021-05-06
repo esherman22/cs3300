@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:page_title) %> | Cs3300</title>
+    <title><%= yield(:page_title) %> | CS3300</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CS3300 Portfolio Projects</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">
+              <button class="btn btn-outline-success me-2" type="button">Home</button>
+            </a>
+          </li>
+        </ul>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button btn btn-danger" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Log in", new_user_session_path, class: "button btn btn-success" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "button btn btn-primary" %>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <body>
+      <%= yield %>
+    </body>
+  </div>
+
 </html>
+

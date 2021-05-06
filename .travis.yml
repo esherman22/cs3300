@@ -14,3 +14,11 @@ script:
  - sudo apt-get -y install nodejs
  - bundle exec rspec
 
+deploy:
+        provider: heroku
+        api_key: 3bd9e2fc-3d9b-4ddf-bd9d-7055ea2195c2
+        app: enigmatic-lowlands-74328
+        run: "rake db:migrate"
+        on:
+                all_branches: true
+   

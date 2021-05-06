@@ -30,6 +30,8 @@ gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jquery-rails'
 gem 'friendly_id', '~> 5.4.0'
 gem 'mini_racer'
+gem 'devise'
+gem 'sprockets'
 
 
 group :production do
