@@ -26,11 +26,11 @@
         </ul>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button btn btn-danger" %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "button btn btn-danger" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: "button btn btn-success" %>
+            <%= link_to "Sign in", new_user_session_path, class: "button btn btn-success" %>
           </li>
           <li class="nav-item">
             <%= link_to "Sign up", new_user_registration_path, class: "button btn btn-primary" %>
